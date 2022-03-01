@@ -1,8 +1,8 @@
 # theater-system
 
-##cecs575.group10
+## cecs575.group10
 
-###structure:
+### structure:
 docs\
   hw1\
  
