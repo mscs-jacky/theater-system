@@ -1,4 +1,4 @@
-package TheaterSystem;
+package TheaterSystem.Models;
 
 public class Theater {
     private String theaterName;

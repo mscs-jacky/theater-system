@@ -1,4 +1,4 @@
-package TheaterSystem;
+package TheaterSystem.Models;
 
 import java.util.Date;
 

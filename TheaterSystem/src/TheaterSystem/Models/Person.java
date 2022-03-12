@@ -1,4 +1,4 @@
-package TheaterSystem;
+package TheaterSystem.Models;
 
 public abstract class Person {
     protected String firstName;
