@@ -30,11 +30,11 @@ public class Controller {
     }
 
     public ArrayList<Movie> getMovies(){
-        return movies;
+        return controller.movies;
     }
 
     public ArrayList<ShowTime> getMovieTimes(){
-        return movieTimes;
+        return controller.movieTimes;
     }
 
 }
