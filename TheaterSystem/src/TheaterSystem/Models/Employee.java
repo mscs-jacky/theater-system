@@ -9,8 +9,8 @@ public class Employee extends Person{
     private Date employmentEnd;
 
     public Employee(String firstName, String lastName, double workHours, String employmentStatus, Date employmentStart, Date employmentEnd) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        setFirstName(firstName);
+        setLastName(lastName);
         this.workHours = workHours;
         this.employmentStatus = employmentStatus;
         this.employmentStart = employmentStart;
