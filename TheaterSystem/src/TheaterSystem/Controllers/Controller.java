@@ -14,13 +14,17 @@ public class Controller {
 
     private ArrayList<ShowTime> movieTimes;
 
-    private Controller(){
-
-    }
+    private Controller() {}
 
     public static Controller getInstance(){
+
         if(controller == null){
-            controller = new Controller();
+            // apply thread safety by doing double-checking with synchronization
+            synchronized(Controller.class) {
+                if(controller == null) {
+                    controller = new Controller();
+                }
+            }
         }
         return controller;
     }
