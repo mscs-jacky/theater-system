@@ -2,7 +2,7 @@ package TheaterSystem.Models;
 
 public class Customer extends Person{
     public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        setFirstName(firstName);
+        setLastName(lastName);
     }
 }
