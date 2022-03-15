@@ -18,7 +18,11 @@ public class Attendant extends Employee {
         System.out.println("Employee ID:   " + getEmployeeId());
         System.out.println("Pay Rate:      " + getPayRate());
         System.out.println("Hours Worked:  " + getAccumulatedWorkHours());
-        System.out.println("Total Pay:     " + getPayRate()*getAccumulatedWorkHours());
+        System.out.println("Total Pay:     $" + getEarnedWage());
+    }
 
+    @Override
+    public String getEmployeeType() {
+        return "a";
     }
 }
