@@ -108,8 +108,6 @@ public abstract class Employee {
         double check = roundCurrency(getUnpaidWorkHours() * getPayRate());
         setEarnedWage(roundCurrency(getEarnedWage() + check));
         setUnpaidWorkHours(0);
-//        System.out.println("Check:         $" + check);
-//        System.out.println("Total Earned: $" + getEarnedWage());
     }
 
     private double roundCurrency(double currency) {
