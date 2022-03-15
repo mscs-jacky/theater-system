@@ -1,11 +1,14 @@
 package TheaterSystem.Models;
 
 import java.util.Date;
+import java.text.DecimalFormat;
 
 public abstract class Employee {
     private String firstName;
     private String lastName;
     private double accumulatedWorkHours;
+    private double unpaidWorkHours;
+    private double earnedWage;
     private String employeeId;
     private String employeePassword;
     private double payRate;
@@ -71,16 +74,46 @@ public abstract class Employee {
         return getFirstName() + " " + getLastName();
     }
 
-    public void sayHi() {
-        System.out.println(getName() + " says hi!");
+    public double getEarnedWage() {
+        return earnedWage;
+    }
+
+    public void setEarnedWage(double earnedWage) {
+        this.earnedWage = earnedWage;
+    }
+
+    public double getUnpaidWorkHours() {
+        return unpaidWorkHours;
+    }
+
+    public void setUnpaidWorkHours(double unpaidWorkHours) {
+        this.unpaidWorkHours = unpaidWorkHours;
     }
 
     public void clockIn() {
-
+        setTimeStart(new Date());
     }
 
     public void clockOut() {
+        if(getTimeStart() != null) {
+            Date endShift = new Date();
+            double hoursWorked = (endShift.getTime() - getTimeStart().getTime())/1000.0;
+            setTimeStart(null);
+            setAccumulatedWorkHours(getAccumulatedWorkHours() + hoursWorked);
+            setUnpaidWorkHours(getUnpaidWorkHours() + hoursWorked);
+        }
+    }
 
+    public void payCheck() {
+        double check = roundCurrency(getUnpaidWorkHours() * getPayRate());
+        setEarnedWage(roundCurrency(getEarnedWage() + check));
+        setUnpaidWorkHours(0);
+//        System.out.println("Check:         $" + check);
+//        System.out.println("Total Earned: $" + getEarnedWage());
+    }
+
+    private double roundCurrency(double currency) {
+        return Double.parseDouble(String.format("%.2f", currency));
     }
 
     public void getEmployeeDetails() {
@@ -88,8 +121,10 @@ public abstract class Employee {
         System.out.println("Employee ID:  " + getEmployeeId());
         System.out.println("Pay Rate:     " + getPayRate());
         System.out.println("Hours Worked: " + getAccumulatedWorkHours());
-        System.out.println("Total Pay:    " + getPayRate()*getAccumulatedWorkHours());
+        System.out.println("Total Pay:    $" + getEarnedWage());
     }
 
-    public void getEmployeeType() {}
+    public String getEmployeeType() {
+        return null;
+    }
 }
