@@ -3,6 +3,24 @@ package TheaterSystem.Models;
 import java.util.ArrayList;
 
 public class Movie {
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public ArrayList<ShowTime> getShowTimes() {
+        return showTimes;
+    }
+
+    public void setShowTimes(ArrayList<ShowTime> showTimes) {
+        this.showTimes = showTimes;
+    }
+
     private String movieName;
     private String directorName;
     private ArrayList<String> actorNames;
