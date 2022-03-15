@@ -2,50 +2,94 @@ package TheaterSystem.Models;
 
 import java.util.Date;
 
-public class Employee extends Person{
-    private double workHours;
-    private String employmentStatus;
-    private Date employmentStart;
-    private Date employmentEnd;
+public abstract class Employee {
+    private String firstName;
+    private String lastName;
+    private double accumulatedWorkHours;
+    private String employeeId;
+    private String employeePassword;
+    private double payRate;
+    private Date timeStart;
 
-    public Employee(String firstName, String lastName, double workHours, String employmentStatus, Date employmentStart, Date employmentEnd) {
-        setFirstName(firstName);
-        setLastName(lastName);
-        this.workHours = workHours;
-        this.employmentStatus = employmentStatus;
-        this.employmentStart = employmentStart;
-        this.employmentEnd = employmentEnd;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public double getWorkHours() {
-        return workHours;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setWorkHours(double workHours) {
-        this.workHours = workHours;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getEmploymentStatus() {
-        return employmentStatus;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setEmploymentStatus(String employmentStatus) {
-        this.employmentStatus = employmentStatus;
+    public double getAccumulatedWorkHours() {
+        return accumulatedWorkHours;
     }
 
-    public Date getEmploymentStart() {
-        return employmentStart;
+    public void setAccumulatedWorkHours(double accumulatedWorkHours) {
+        this.accumulatedWorkHours = accumulatedWorkHours;
     }
 
-    public void setEmploymentStart(Date employmentStart) {
-        this.employmentStart = employmentStart;
+    public String getEmployeeId() {
+        return employeeId;
     }
 
-    public Date getEmploymentEnd() {
-        return employmentEnd;
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public void setEmploymentEnd(Date employmentEnd) {
-        this.employmentEnd = employmentEnd;
+    public String getEmployeePassword() {
+        return employeePassword;
     }
+
+    public void setEmployeePassword(String employeePassword) {
+        this.employeePassword = employeePassword;
+    }
+
+    public double getPayRate() {
+        return payRate;
+    }
+
+    public void setPayRate(double payRate) {
+        this.payRate = payRate;
+    }
+
+    public Date getTimeStart() {
+        return timeStart;
+    }
+
+    public void setTimeStart(Date timeStart) {
+        this.timeStart = timeStart;
+    }
+
+    public String getName() {
+        return getFirstName() + " " + getLastName();
+    }
+
+    public void sayHi() {
+        System.out.println(getName() + " says hi!");
+    }
+
+    public void clockIn() {
+
+    }
+
+    public void clockOut() {
+
+    }
+
+    public void getEmployeeDetails() {
+        System.out.println("Name:         " + getName());
+        System.out.println("Employee ID:  " + getEmployeeId());
+        System.out.println("Pay Rate:     " + getPayRate());
+        System.out.println("Hours Worked: " + getAccumulatedWorkHours());
+        System.out.println("Total Pay:    " + getPayRate()*getAccumulatedWorkHours());
+    }
+
+    public void getEmployeeType() {}
 }
