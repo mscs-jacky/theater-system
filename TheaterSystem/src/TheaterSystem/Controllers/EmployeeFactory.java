@@ -33,6 +33,9 @@ public class EmployeeFactory {
                 lastName = userInput.nextLine();
             }
             return new Attendant(firstName, lastName, minWage);
-        } else return null;
+        } else {
+            System.out.println("[INVALID EMPLOYEE CODE] Please try again.");
+            return null;
+        }
     }
 }
