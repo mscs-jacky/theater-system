@@ -1,19 +1,24 @@
 package TheaterSystem.Models;
 
-public class Manager extends Person{
-    private String password;
+import java.util.UUID;
 
-    public Manager(String firstName, String lastName, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
+public class Manager extends Employee{
+    public Manager(String firstName, String lastName, double payRate) {
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmployeeId(String.valueOf(UUID.randomUUID()));
+        setEmployeePassword(String.valueOf(UUID.randomUUID()));
+        setPayRate(payRate);
     }
 
-    public String getPassword() {
-        return password;
-    }
+    @Override
+    public void getEmployeeDetails() {
+        System.out.println("Name:          " + getName());
+        System.out.println("Employee Type: Manager");
+        System.out.println("Employee ID:   " + getEmployeeId());
+        System.out.println("Pay Rate:      " + getPayRate());
+        System.out.println("Hours Worked:  " + getAccumulatedWorkHours());
+        System.out.println("Total Pay:     " + getPayRate()*getAccumulatedWorkHours());
 
-    private void setPassword(String password) {
-        this.password = password;
     }
 }
