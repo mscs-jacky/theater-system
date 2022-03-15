@@ -21,54 +21,73 @@ public class TicketFactory {
         }
         Scanner userInput = new Scanner(System.in);
 
-        System.out.print("Movie Id: ");
+        while(movie == null){
+            System.out.print("Movie Id: ");
 
-        if (userInput.hasNextLine()) {
+            if (userInput.hasNextLine()) {
 
-            for (Movie currentMovie : controller.getMovies()) {
-                if (currentMovie.getId() == Integer.parseInt(userInput.nextLine())) {
-                    movie = currentMovie;
-                    break;
+                for (Movie currentMovie : controller.getMovies()) {
+                    if (currentMovie.getId() == Integer.parseInt(userInput.nextLine())) {
+                        movie = currentMovie;
+                        break;
+                    }
                 }
             }
+            if(movie != null){
+                break;
+            }
+            System.out.println("Incorrect Input");
         }
+
 
         int i = 1;
         for (ShowTime currentShowtimes : movie.getShowTimes()) {
             System.out.println(i + ". " + currentShowtimes.getStartTime());
             i++;
         }
-        System.out.print("Showtime Id: ");
-        if(userInput.hasNextLine()) {
-            showTime = movie.getShowTimes().get(Integer.parseInt(userInput.nextLine()) -1);
-            theater = showTime.getTheater();
+        while(showTime == null)
+        {
+            System.out.print("Showtime Id: ");
+            if(userInput.hasNextLine()) {
+
+                showTime = movie.getShowTimes().get(Integer.parseInt(userInput.nextLine()) -1);
+                theater = showTime.getTheater();
+                break;
+            }
+            System.out.println("Incorrent Input");
+
         }
 
-        System.out.println("Select Admission");
         System.out.println("1. General");
         System.out.println("2. Student");
         System.out.println("3. Senior");
         System.out.println("4. Matinee");
-        if(userInput.hasNextLine()) {
-            if(userInput.nextLine() == "1"){
-                return new General(movie, price, showTime, theater);
+        while(true){
 
-            }
-            if(userInput.nextLine() == "2"){
-                return new Student(movie, price, showTime, theater);
+            System.out.println("Select Admission:");
 
-            }
-            if(userInput.nextLine() == "3"){
-                return new Senior(movie, price, showTime, theater);
+            if(userInput.hasNextLine()) {
+                if(userInput.nextLine() == "1"){
+                    return new General(movie, price, showTime, theater);
 
-            }
-            if(userInput.nextLine() == "4"){
-                return new Matinee(movie, price, showTime, theater);
+                }
+                if(userInput.nextLine() == "2"){
+                    return new Student(movie, price, showTime, theater);
 
+                }
+                if(userInput.nextLine() == "3"){
+                    return new Senior(movie, price, showTime, theater);
+
+                }
+                if(userInput.nextLine() == "4"){
+                    return new Matinee(movie, price, showTime, theater);
+
+                }
             }
+
+            System.out.println("Invalid Input");
         }
 
-        return null;
 
 
     }
