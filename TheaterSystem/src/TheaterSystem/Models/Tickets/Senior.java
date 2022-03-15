@@ -5,8 +5,6 @@ import TheaterSystem.Models.ShowTime;
 import TheaterSystem.Models.Theater;
 import TheaterSystem.Models.Ticket;
 
-import java.util.Calendar;
-
 public class Senior extends Ticket {
 
     private static double seniorDiscount = .2;
@@ -14,7 +12,7 @@ public class Senior extends Ticket {
 
 
     public Senior(Movie movie, double price, ShowTime showTime, Theater theater) {
-        setMoive(movie);
+        setMovie(movie);
         setShowTime(showTime);
         setTheater(theater);
         if(verifySeniorStatus() == true){
@@ -28,7 +26,7 @@ public class Senior extends Ticket {
 
     @Override
     public void getTicketDetails() {
-        System.out.println("Movie:          " + getMoive());
+        System.out.println("Movie:          " + getMovie());
         System.out.println("Ticket Type: Senior");
         System.out.println("ShowTime:   " + getShowTime().getStartTime());
         System.out.println("Price:      " + getPrice());

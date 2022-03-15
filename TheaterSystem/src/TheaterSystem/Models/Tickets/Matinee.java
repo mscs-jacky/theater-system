@@ -12,7 +12,7 @@ public class Matinee extends Ticket {
 
 
     public Matinee(Movie movie, double price, ShowTime showTime, Theater theater) {
-        setMoive(movie);
+        setMovie(movie);
         setShowTime(showTime);
         setTheater(theater);
         setPrice(price + surgeCharge);
@@ -22,7 +22,7 @@ public class Matinee extends Ticket {
 
     @Override
     public void getTicketDetails() {
-        System.out.println("Movie:          " + getMoive());
+        System.out.println("Movie:          " + getMovie());
         System.out.println("Ticket Type: Matinee");
         System.out.println("ShowTime:   " + getShowTime().getStartTime());
         System.out.println("Price:      " + getPrice());

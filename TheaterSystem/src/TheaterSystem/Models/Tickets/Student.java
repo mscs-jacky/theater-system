@@ -12,7 +12,7 @@ public class Student extends Ticket {
 
 
     public Student(Movie movie, double price, ShowTime showTime, Theater theater) {
-        setMoive(movie);
+        setMovie(movie);
         setShowTime(showTime);
         setTheater(theater);
         if(verifyStudentStatus() == true){
@@ -26,7 +26,7 @@ public class Student extends Ticket {
 
     @Override
     public void getTicketDetails() {
-        System.out.println("Movie:          " + getMoive());
+        System.out.println("Movie:          " + getMovie());
         System.out.println("Ticket Type: Student");
         System.out.println("ShowTime:   " + getShowTime().getStartTime());
         System.out.println("Price:      " + getPrice());

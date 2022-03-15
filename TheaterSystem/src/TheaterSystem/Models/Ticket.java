@@ -3,7 +3,7 @@ package TheaterSystem.Models;
 
 public abstract class Ticket {
 
-    private Movie moive;
+    private Movie movie;
     private ShowTime showTime;
     private Theater theater;
     private int id;
@@ -13,8 +13,8 @@ public abstract class Ticket {
         return showTime;
     }
 
-    public void setMoive(Movie moive) {
-        this.moive = moive;
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 
     public void setShowTime(ShowTime showTime) {
@@ -45,12 +45,12 @@ public abstract class Ticket {
         return price;
     }
 
-    public Movie getMoive() {
-        return moive;
+    public Movie getMovie() {
+        return movie;
     }
 
     public void getTicketDetails() {
-        System.out.println("Movie:         " + moive.getMovieName());
+        System.out.println("Movie:         " + movie.getMovieName());
         System.out.println("Theater:  " + theater.getTheaterName());
         System.out.println("Price:     " + price);
         System.out.println("Showtime:    " + showTime.getStartTime());

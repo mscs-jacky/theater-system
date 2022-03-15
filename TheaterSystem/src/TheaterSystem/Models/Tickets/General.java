@@ -6,7 +6,6 @@ import TheaterSystem.Models.Theater;
 import TheaterSystem.Models.Ticket;
 
 import java.util.Calendar;
-import java.util.UUID;
 
 public class General extends Ticket {
 
@@ -14,7 +13,7 @@ public class General extends Ticket {
 
 
     public General(Movie movie, double price, ShowTime showTime, Theater theater) {
-        setMoive(movie);
+        setMovie(movie);
         setShowTime(showTime);
         setTheater(theater);
         if(checkIfTuesday() == true){
@@ -29,7 +28,7 @@ public class General extends Ticket {
 
     @Override
     public void getTicketDetails() {
-        System.out.println("Movie:          " + getMoive());
+        System.out.println("Movie:          " + getMovie());
         System.out.println("Ticket Type: General");
         System.out.println("ShowTime:   " + getShowTime().getStartTime());
         System.out.println("Price:      " + getPrice());
