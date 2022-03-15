@@ -1,8 +1,8 @@
 package TheaterSystem.Models;
 
 public abstract class Person {
-    protected String firstName;
-    protected String lastName;
+    private String firstName;
+    private String lastName;
 
     public String getFirstName(){
         return firstName;
@@ -17,4 +17,5 @@ public abstract class Person {
     public void setLastName(String lastName){
         this.lastName = lastName;
     }
+    public void sayName(){}
 }
