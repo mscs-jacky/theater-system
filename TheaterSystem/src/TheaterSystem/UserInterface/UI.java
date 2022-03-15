@@ -16,6 +16,13 @@ public class UI {
             employees.get(i).getEmployeeDetails();
             System.out.println();
         }
+
+//        TODO: Example for employee interface to clockin/clockout with other methods
+        for(Employee employee: employees) {
+            if(employee.getEmployeeId().equalsIgnoreCase("userInput")) {
+//                Clock in, clockout, etc...
+            }
+        }
 //        employees.get(0).clockIn();
 //        addEmployees(employees);
 //        employees.get(0).clockOut();
