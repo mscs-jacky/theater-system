@@ -13,12 +13,15 @@ public class TicketFactory {
         Ticket newTicket = null;
         Movie movie = null;
         Theater theater = null;
-        Double price = 10.99;
+        Double price = 10.99;   // default ticket price
         ShowTime showTime = null;
+
         Controller controller = Controller.getInstance();
+
         for (Movie currentMovie : controller.getMovies()) {
             System.out.println(currentMovie.getId() + ". " + currentMovie.getMovieName());
         }
+
         Scanner userInput = new Scanner(System.in);
 
         while(movie == null){
@@ -41,8 +44,8 @@ public class TicketFactory {
 
 
         int i = 1;
-        for (ShowTime currentShowtimes : movie.getShowTimes()) {
-            System.out.println(i + ". " + currentShowtimes.getStartTime());
+        for (ShowTime currentShowtime : movie.getShowTimes()) {
+            System.out.println(i + ". " + currentShowtime.getStartTime());
             i++;
         }
         while(showTime == null)
@@ -54,7 +57,7 @@ public class TicketFactory {
                 theater = showTime.getTheater();
                 break;
             }
-            System.out.println("Incorrent Input");
+            System.out.println("Incorrect Input");
 
         }
 
@@ -67,19 +70,19 @@ public class TicketFactory {
             System.out.println("Select Admission:");
 
             if(userInput.hasNextLine()) {
-                if(userInput.nextLine() == "1"){
+                if(userInput.nextLine().equalsIgnoreCase("1")){
                     return new General(movie, price, showTime, theater);
 
                 }
-                if(userInput.nextLine() == "2"){
+                if(userInput.nextLine().equalsIgnoreCase("2")){
                     return new Student(movie, price, showTime, theater);
 
                 }
-                if(userInput.nextLine() == "3"){
+                if(userInput.nextLine().equalsIgnoreCase("3")){
                     return new Senior(movie, price, showTime, theater);
 
                 }
-                if(userInput.nextLine() == "4"){
+                if(userInput.nextLine().equalsIgnoreCase("4")){
                     return new Matinee(movie, price, showTime, theater);
 
                 }
