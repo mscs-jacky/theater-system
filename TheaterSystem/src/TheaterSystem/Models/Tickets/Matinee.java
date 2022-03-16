@@ -7,7 +7,7 @@ import TheaterSystem.Models.Ticket;
 
 public class Matinee extends Ticket {
 
-    private static double surgeCharge = 9.99;
+    private static final double surgeCharge = 9.99;
 
 
 

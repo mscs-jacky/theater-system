@@ -7,7 +7,7 @@ import TheaterSystem.Models.Ticket;
 
 public class Student extends Ticket {
 
-    private static double studentDiscount = .15;
+    private static final double studentDiscount = .15;
 
 
 

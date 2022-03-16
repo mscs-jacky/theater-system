@@ -9,14 +9,14 @@ import java.util.Calendar;
 
 public class General extends Ticket {
 
-    private static double tuesdayDiscount = .1;
+    private static final double tuesdayDiscount = .1;
 
 
     public General(Movie movie, double price, ShowTime showTime, Theater theater) {
         setMovie(movie);
         setShowTime(showTime);
         setTheater(theater);
-        if(checkIfTuesday() == true){
+        if(checkIfTuesday()){
             setPrice(price - (price * tuesdayDiscount));
         }
         else{

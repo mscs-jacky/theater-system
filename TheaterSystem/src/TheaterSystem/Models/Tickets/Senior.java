@@ -7,7 +7,7 @@ import TheaterSystem.Models.Ticket;
 
 public class Senior extends Ticket {
 
-    private static double seniorDiscount = .2;
+    private static final double seniorDiscount = .2;
 
 
 
@@ -15,7 +15,7 @@ public class Senior extends Ticket {
         setMovie(movie);
         setShowTime(showTime);
         setTheater(theater);
-        if(verifySeniorStatus() == true){
+        if(verifySeniorStatus()){
             setPrice(price - (price * seniorDiscount));
         }
         else{
