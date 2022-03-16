@@ -15,7 +15,7 @@ public class Student extends Ticket {
         setMovie(movie);
         setShowTime(showTime);
         setTheater(theater);
-        if(verifyStudentStatus() == true){
+        if(verifyStudentStatus()){
             setPrice(price - (price * studentDiscount));
         }
         else{
