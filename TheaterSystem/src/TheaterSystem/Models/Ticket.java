@@ -8,6 +8,15 @@ public abstract class Ticket {
     private Theater theater;
     private int id;
     private double price;
+    private Discount discount;
+
+    public Discount getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Discount discount) {
+        this.discount = discount;
+    }
 
     public ShowTime getShowTime() {
         return showTime;
