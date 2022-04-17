@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea8239b2-ed65-49cc-858c-4567630a0a70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TheaterSystem/Controllers/TicketFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TheaterSystem/Models/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TheaterSystem/Models/Tickets/General.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TheaterSystem/Models/Tickets/Matinee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TheaterSystem/Models/Tickets/Senior.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TheaterSystem/Models/Tickets/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheaterSystem/Models/Attendant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheaterSystem/Models/Attendant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheaterSystem/Models/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheaterSystem/Models/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheaterSystem/Models/ShowTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheaterSystem/Models/ShowTime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,5 +69,9 @@
       <screen x="-5120" y="0" width="5120" height="1400" />
     </state>
     <state x="-2981" y="438" key="IDE.errors.dialog/0.0.2560.1400/-5120.0.5120.1400@-5120.0.5120.1400" timestamp="1647328833795" />
+    <state x="1401" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1649813635554">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1401" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-5120.0.5120.1400@0.0.2560.1400" timestamp="1649813635554" />
   </component>
 </project>
