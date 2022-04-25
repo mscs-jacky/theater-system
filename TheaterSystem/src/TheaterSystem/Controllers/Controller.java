@@ -10,7 +10,7 @@ public class Controller {
 
     private static Controller controller = null;
 
-    private ArrayList<Movie> movies;
+    private MovieList movies;
 
     private ArrayList<ShowTime> movieTimes;
 
@@ -30,11 +30,13 @@ public class Controller {
     }
 
     public ArrayList<Movie> getMovies(){
-        return controller.movies;
+        return controller.movies.getList();
     }
 
     public ArrayList<ShowTime> getMovieTimes(){
         return controller.movieTimes;
     }
 
+    public ConcreteMoveIterator getMovieIterator(){return controller.movies.createIterator()}
+    public ConcreteMoveIterator getMovieIterator(Showtime st){return controller.movies.createIterator(st)}
 }
